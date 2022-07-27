@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./start-Up-Page.css" />
+    <link rel="stylesheet" href="./side-panel.css" />
+    <script>
+        function openNav() {
+            console.log("in openNav")
+            document.getElementById("mySidebar").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #265ec2;
+            --secondary-color: #0a1b1b;
+            --background-color: #fbfef9;
+            --gray-color: #8d8e8e;
+            --light-gray-color: #a5b2b9;
+            --passive-color: #f2f4f3;
+        }
+
+        input {
+            background-color: var(--passive-color);
+            padding: 1rem;
+            border: 1px solid var(--passive-color);
+            border-radius: 14px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+        }
+
+
+
+        .form-container {
+            width: 70%;
+            height: 20%;
+            /* padding: 4rem 0rem 4rem 4rem; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* .form-container::after {
+            content: "";
+            position: absolute;
+            left: 49%;
+            height: 100%;
+            width: 100%;
+            background: url(https://svgshare.com/i/ikq.svg);
+            background-size: 150%;
+        } */
+
+        .form {
+            width: 90%;
+        }
+
+
+        .form {
+            padding-top: 1rem;
+        }
+
+        .form-input {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            gap: 1rem;
+        }
+
+        .name-input {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .btn-input {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .name-input input {
+            width: 100%;
+        }
+
+        .primary-btn {
+            background-color: var(--primary-color);
+            color: white;
+            width: 50%;
+            padding: 1rem;
+            border: none;
+            border-radius: 54px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+            cursor: pointer;
+        }
+
+        .primary-btn:hover {
+            background-color: #d25a19;
+        }
+
+        .primary-btn:active {
+            background-color: var(--passive-color);
+            color: black;
+        }
+
+        .secondary-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            width: 50%;
+            padding: 1rem;
+            border: none;
+            border-radius: 54px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+            cursor: pointer;
+        }
+
+        .secondary-btn:hover {
+            background-color: #202020;
+        }
+
+        .secondary-btn:active {
+            background-color: var(--passive-color);
+            color: black;
+        }
+
+        .primary-heading {
+            font-weight: 600;
+            font-size: 3rem;
+        }
+
+        .secondary-heading {
+            color: var(--light-gray-color);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .secondary-text {
+            color: var(--gray-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .login-link {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .fullstop {
+            color: #4fbe37;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .circle {
+            background: rgb(2, 0, 36);
+            background: linear-gradient(90deg,
+                    rgba(2, 0, 36, 1) 22%,
+                    rgb(38, 194, 51) 63%);
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        @media screen and (max-width: 980px) {
+            .wave {
+                display: none;
+            }
+
+            .side-panel {
+                display: none;
+            }
+
+            .form-container {
+                width: 100%;
+                /* padding: 4rem 0rem 4rem 0rem; */
+            }
+
+            .form-container::after {
+                display: none;
+            }
+
+            .section-header {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .form-input {
+                width: 100%;
+            }
+
+            .nav-container {
+                width: 100%;
+                /* padding: 2rem; */
+            }
+        }
+
+        @media screen and (max-width: 560px) {
+            .name-input {
+                flex-direction: column;
+            }
+
+            .primary-heading {
+                font-size: 1.6rem;
+            }
+
+            .nav-container {
+                position: relative;
+            }
+
+            .nav-list {
+                gap: 2rem;
+            }
+        }
+
+        fieldset {
+            overflow: hidden
+        }
+
+        .some-class {
+            float: left;
+            clear: none;
+        }
+
+        label {
+            float: left;
+            clear: none;
+            display: block;
+            padding: 0px 1em 0px 8px;
+        }
+
+        input[type=radio],
+        input.radio {
+            float: left;
+            clear: none;
+            margin: 2px 0 0 2px;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            height: 10%;
+            width: 50%;
+            /* padding: 10px; */
+            height: 300px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        /* .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        } */
+
+        .webcamColumn {
+            border: 1px solid black;
+            /* background-color: blue; */
+            /* margin-left: 20px; */
+            /* margin-left: 1px; */
+            height: 500px;
+        }
+    </style>
+
+    <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="showcase">
+        <header>
+            <h2 class="logo">NCR Hackathon 2022</h2>
+            <div class="toggle"></div>
+        </header>
+        <video class="overlay" src="./Assets/Videos/StartUp-Video.mp4" muted loop autoplay></video>
+        <div class="overlay"></div>
+
+        <div class="text">
+            <h2>At NCR, We Never Stop </h2>
+            <h3>Exploring The World</h3>
+
+            <!-- onclick="openNav()" -->
+            <a href="./AccountOpening.html">Explore</a>
+        </div>
+
+
+        <ul class="social">
+            <li><a href="https://www.facebook.com/ncrcorp/" target="_blank"><img
+                        src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+            <li><a href="https://twitter.com/ncrcorporation" target="_blank"><img
+                        src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+            <li><a href="https://www.instagram.com/ncrcorporation/?hl=en" target="_blank"><img
+                        src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+        </ul>
+    </div>
+
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <div class="row">
+            <br><br><br><br><br><br><br><br>
+            <div class="form-container column">
+
+                <div class="section-header">
+                    <h1 class="primary-heading">
+                        Create a new account<span class="fullstop">.</span>
+                    </h1>
+                </div>
+                <form action="javascript:void(0);" class="form">
+                    <div class="form-input">
+                        <div class="name-input">
+                            <input type="text" name="fname" id="fname" placeholder="First Name" />
+                            <input type="text" name="lname" id="lname" placeholder="Last Name" />
+
+                        </div>
+                        <input placeholder="Date of birth" type="text" onfocus="(this.type = 'date')" id="date">
+                        <input type="email" name="email" id="email" placeholder="Email" />
+                        <input type="password" name="pass" id="pass" placeholder="Password" />
+
+                        <p class="secondary-heading">Gender </p>
+
+                        <div class="container">
+                            <form>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" checked>Male
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">Female
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">Others
+                                </label>
+                            </form>
+
+                        </div>
+
+                        <label class="radio-inline">
+                            <p class="secondary-heading">Choose govt. ID : </p>
+                            <select name="idProof" id="idProof">
+                                <option value="Aadhaar">Aadhaar</option>
+                                <option value="PAN card">PAN card</option>
+                                <option value="Driving License">Driving License</option>
+                            </select>
+                        </label>
+
+                        <p class="secondary-heading">Enter the ID No. :</p>
+                        <input id="id_number" name="id_number">
+
+                        <div style=clear:both>
+                            <label for="fileselect"><B>Choose Document for KYC :</B></label>
+                            <input type="file" name="upload" id="fileselect">
+                        </div>
+
+                        <div class="btn-input">
+                            <button type="button" class="secondary-btn" onclick="closeNav()">Back to Home</button>
+                            <button type="submit" class="primary-btn">Create account</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
+</body>
+
+</html>

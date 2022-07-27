@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" rel="noopener" href="AccountOpening.css">
+    <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+
+
+    <!-- Modal -->
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                    class="w3-button w3-display-topright">&times;</span>
+                <p>Congratulations! your KYC details have been verified</p>
+                <a href="./ChooseTheTypeOfAccount.html">Next</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content center">
+        <h1>Let's perform your KYC!</h1>
+
+        <div class="aParent">
+            <div style="position:relative; left:250px; top:-20px;">
+                <video id="webcam" autoplay playsinline width="250" height="250" style="border-style: solid"></video>
+                <canvas id="canvas" class="d-none"></canvas>
+                <script>
+                    const webcamElement = document.getElementById('webcam');
+                    const canvasElement = document.getElementById('canvas');
+                    const webcam = new Webcam(webcamElement, 'user', canvasElement);
+
+                    function onClick() {
+                        canvasElement.style.display = "none"
+                        webcam.start()
+                            .then(result => {
+                                console.log("webcam started");
+                            })
+                            .catch(err => {
+                                console.log(err);
+                            });
+                    }
+
+                    function takeSnap() {
+                        let picture = webcam.snap();
+                        canvasElement.setAttribute("style", "border-style:solid")
+                        webcam.stop()
+                        document.querySelector('#download-photo').href = picture;
+                    }
+
+                    function verify() {
+                        var ctx = canvasElement.getContext("2d");
+                        // var loadingGIF = GIF();
+                        // loadingGIF.load( "Loading_icon.gif" );
+                        // ctx.drawImage(loadingGIF);
+                        const img = new Image();
+                        img.addEventListener('load', function () {
+                            // execute drawImage statements here
+                            ctx.drawImage(img, 0, 0);
+                        }, false);
+                        img.src = './verify.jpg';
+                    }
+
+                    function stopWebcam() {
+                        canvasElement.style.display = "none"
+                        webcam.stop();
+                    }
+                </script>
+                <div style="position: absolute">
+                    <button id="capture" type="button" onclick="takeSnap()">Capture</button>
+                    <button id="reset" type="button" onclick="onClick()">Reset</button>
+                    <button id="ok" type="button" onclick="document.getElementById('id01').style.display='block'"
+                        data-mdb-toggle="modal" data-mdb-target="#exampleModal">OK</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div>
+            <label for="StartWebcam"><B>For Video KYC : </B></label>
+            <button id="StartWebcam" type="button" onclick="onClick()" style="border-radius:6px;">Start webcam!</button>
+            <button id="StopWebcam" type="button" onclick="stopWebcam()" style="border-radius:6px;">Stop
+                webcam!</button>
+        </div>
+    </div>
+</body>
+
+</html>

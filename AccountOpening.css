@@ -1,0 +1,21 @@
+.aParent div {
+    float: left;
+    clear: none;
+    margin-bottom:50px;
+}
+.content {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.capture
+{
+    position: absolute;
+    bottom:4px;
+    left: 8px;
+    text-align: center;
+    /*transform: translateX(70%);*/
+    border-style:solid;
+    background-color: green;
+    border-radius:6px;
+}
